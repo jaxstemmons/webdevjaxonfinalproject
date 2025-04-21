@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joke Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f2f2f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #jokeBox {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            max-width: 600px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        button {
+            padding: 0.7rem 1.2rem;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        a {
+            margin-top: 2rem;
+            text-decoration: none;
+            color: #0077cc;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Joke Generator 🤣</h1>
+    <div id="jokeBox">Click the button below to get a random joke!</div>
+    <button onclick="tellJoke()">Get a Joke</button>
+
+    <a href="scratch.html">⬅ Back to Scratch Page</a>
+    <a href="index.html" class="btn-home">⬅ Back to Home</a>
+
+    <script>
+        const jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "I told my computer I needed a break... now it won’t stop sending me Kit-Kat ads.",
+            "Why did the web developer go broke? Because he used up all his cache.",
+            "Parallel lines have so much in common… it’s a shame they’ll never meet.",
+            "What did the 0 say to the 8? Nice belt!",
+            "How does a penguin build its house? Igloos it together."
+        ];
+
+        function tellJoke() {
+            const randomIndex = Math.floor(Math.random() * jokes.length);
+            document.getElementById("jokeBox").innerText = jokes[randomIndex];
+        }
+    </script>
+</body>
+</html>
